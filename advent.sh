@@ -1,4 +1,4 @@
-#! /bin/bash
+#!/usr/bin/env bash
 set -eu
 
 if [ "$(wc -l < ideas.txt)" -ne 24 ]; then
