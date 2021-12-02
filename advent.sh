@@ -1,14 +1,14 @@
-#! /bin/bash
+#!/usr/bin/env bash
 set -eu
 
-if [ "$(cat ideas.txt | wc -l)" -ne 24 ]; then
+if [ ! -f ideas.txt ] || [ "$(wc -l < ideas.txt)" -ne 24 ]; then
     echo "Please completly fill the ideas.txt with 24 entries"
     exit 1
 fi
 
 if [ ! -f .shuffled ]; then
-    echo "Generating shuffled  advent calendar"
-    shuf ideas.txt > .shuffled
+    echo "Generating shuffled advent calendar"
+    shuf -o .shuffled ideas.txt
 fi
 
 MONTH=$(date "+%m")
