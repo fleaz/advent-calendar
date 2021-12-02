@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -eu
 
-if [ "$(wc -l < ideas.txt)" -ne 24 ]; then
+if [ ! -f ideas.txt ] || [ "$(wc -l < ideas.txt)" -ne 24 ]; then
     echo "Please completly fill the ideas.txt with 24 entries"
     exit 1
 fi
