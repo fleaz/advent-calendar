@@ -1,7 +1,7 @@
 #! /bin/bash
 set -eu
 
-if [ "$(cat ideas.txt | wc -l)" -ne 24 ]; then
+if [ "$(wc -l < ideas.txt)" -ne 24 ]; then
     echo "Please completly fill the ideas.txt with 24 entries"
     exit 1
 fi
