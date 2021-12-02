@@ -8,7 +8,7 @@ fi
 
 if [ ! -f .shuffled ]; then
     echo "Generating shuffled  advent calendar"
-    shuf ideas.txt > .shuffled
+    shuf -o .shuffled ideas.txt
 fi
 
 MONTH=$(date "+%m")
