@@ -7,7 +7,7 @@ if [ ! -f ideas.txt ] || [ "$(wc -l < ideas.txt)" -ne 24 ]; then
 fi
 
 if [ ! -f .shuffled ]; then
-    echo "Generating shuffled  advent calendar"
+    echo "Generating shuffled advent calendar"
     shuf -o .shuffled ideas.txt
 fi
 
