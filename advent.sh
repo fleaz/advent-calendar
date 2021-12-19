@@ -21,7 +21,7 @@ fi
 DAY=$(date "+%d")
 
 if [ $# -eq 1 ] && [ -n "$1" ]; then
-    if [ "$1" -le "$MONTH" ]; then
+    if [ "$1" -le "$DAY" ]; then
         DAY=$1
     else
         echo "You are not allowed to look into the future. This incident will be reported!"
