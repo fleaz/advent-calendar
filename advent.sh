@@ -14,7 +14,7 @@ fi
 MONTH=$(date "+%m")
 
 if [ "$MONTH" -ne 12 ]; then
-    echo "It's not not yet december! ;)"
+    echo "It's not yet December! ;)"
     exit 1
 fi
 
