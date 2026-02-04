@@ -16,7 +16,8 @@ define how complex they get and how much time you want to spend each day.
 
 ## Usage
 Fill the *ideas.txt* with your 24 ideas (one per line) and then run
-`./advent.sh` in your terminal. On the first run it will take your ideas and
-shuffle them around, so you don't know which task is due on which day, and
-save the generated list to another file.
+`./advent.sh` in your terminal. It will take your ideas and
+shuffle them around, so you don't know which task is due on which day.
+The same order is reproduced at each run as long as the file content
+remains the same -- so don't touch it after advent has started.
 If it's already December, it will show you the task for today.

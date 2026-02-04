@@ -6,15 +6,10 @@ if [ ! -f ideas.txt ] || [ "$(wc -l < ideas.txt)" -ne 24 ]; then
     exit 1
 fi
 
-if [ ! -f .shuffled ]; then
-    echo "Generating shuffled advent calendar"
-    shuf -o .shuffled ideas.txt
-fi
-
 MONTH=$(date "+%m")
 
 if [ "$MONTH" -ne 12 ]; then
-    echo "It's not not yet december! ;)"
+    echo "It's not yet December! ;)"
     exit 1
 fi
 
@@ -31,4 +26,5 @@ if [ $# -eq 1 ] && [ -n "$1" ]; then
 fi
 
 echo "Behind door number $DAY:"
-sed "${DAY}q;d" .shuffled
+shuf --random-source <(sha256sum ideas.txt | head -c64 | xxd -r -p) ideas.txt \
+    | sed "${DAY}q;d"
